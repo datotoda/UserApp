@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context=".fragments.add.addFragment">
+    tools:context=".fragments.add.AddFragment">
 
 
     <EditText
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/firstNameEditText" />
 
     <EditText
-        android:id="@+id/ageNameEditText"
+        android:id="@+id/ageEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -55,7 +55,6 @@
         android:text="Add user"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageNameEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/ageEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

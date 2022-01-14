@@ -7,11 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.Toast
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
 import com.example.userapp.R
 import com.example.userapp.model.User
@@ -20,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 
 
-class addFragment : Fragment() {
+class AddFragment : Fragment() {
 
     private val userViewModel: UserViewModel by lazy {
         ViewModelProvider(this)[UserViewModel::class.java]
@@ -44,7 +41,7 @@ class addFragment : Fragment() {
     private fun createUserRecord() {
         val firstName = firstNameEditText.text.toString()
         val lastName = lastNameEditText.text.toString()
-        val age = ageNameEditText.text
+        val age = ageEditText.text
 
         if (validateInputs(firstName, lastName, age)){
             val newUser = User(0, firstName, lastName, age.toString().toInt())
@@ -60,7 +57,7 @@ class addFragment : Fragment() {
     }
 
     private fun validateInputs(fName: String, lName: String, age: Editable): Boolean{
-        return !(TextUtils.isEmpty(fName) && TextUtils.isEmpty(lName) && age.isNotEmpty())
+        return !(TextUtils.isEmpty(fName) || TextUtils.isEmpty(lName) || age.isEmpty())
     }
 
 }

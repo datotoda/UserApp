@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.userapp.fragments.list.listFragment"
+        android:name="com.example.userapp.fragments.list.ListFragment"
         android:label="User List"
         tools:layout="@layout/fragment_list" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.example.userapp.fragments.add.addFragment"
+        android:name="com.example.userapp.fragments.add.AddFragment"
         android:label="Add User"
         tools:layout="@layout/fragment_add" >
         <action
@@ -28,11 +28,14 @@
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.example.userapp.fragments.update.updateFragment"
+        android:name="com.example.userapp.fragments.update.UpdateFragment"
         android:label="Update User"
         tools:layout="@layout/fragment_update" >
         <action
             android:id="@+id/action_updateFragment_to_listFragment"
             app:destination="@id/listFragment" />
+        <argument
+            android:name="editUser"
+            app:argType="com.example.userapp.model.User" />
     </fragment>
 </navigation>
